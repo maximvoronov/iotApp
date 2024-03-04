@@ -13,7 +13,27 @@ Window {
     Material.theme: Material.Dark
     Material.accent: Material.Red
     Material.primary: Material.Blue
+/*
+    BorderImage{
+        id: imgIot
+        width: 100
+        height: 100
+        x: 50
+        y: 100
+        smooth: true
+        source: "qrc://iot.png"
+        border {
+            left: 30; top: 15; right: 30; bottom: 15
+        }
 
+        //color: "green"
+        Text {
+            id: iotTextRadio1
+            text: qsTr("iot")
+            font.pointSize: 14
+        }
+    }
+*/
 /*
     Page{
         id: page
@@ -37,6 +57,7 @@ Window {
         }
     }
 */
+
     Rectangle{
         id: rectRadio1
         width: 100
@@ -75,10 +96,7 @@ Window {
         text: qsTr("IotNet")
         Button{
             onClicked:{
-
-
-
-
+                onSync();
             }
         }
     }
@@ -89,7 +107,7 @@ Window {
         y: 560
         width: 120
         height: 80
-        icon.source: "qrc:/iot.png"
+        icon.source: "qrc:///iot.png"
 
         font.pointSize: 14
         text: qsTr("Закрыть")

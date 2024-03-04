@@ -23,8 +23,9 @@ int main(int argc, char *argv[])
         Qt::QueuedConnection);
     engine.load(url);
 
-    std::unique_ptr<Radio1> radio1 = std::make_unique<Radio1>();
+    std::unique_ptr<Radio1> radio1 = std::unique_ptr<Radio1>();
     std::unique_ptr<Iot> iot = std::make_unique<Iot>();
+
     iot.get()->sync();
 
 

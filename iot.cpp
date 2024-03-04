@@ -18,19 +18,15 @@ void Iot::putMessage(enum IOT message) noexcept {
     mess_pointer->insert(mess_pointer->begin(), message);
 }
 
-void Iot::onClicked(){
-    auto connection_check = rxcpp::observable<>::range(1,10);
-
-    putMessage(IOT::RADIO1_STATE_ON);
-
-
-}
-
 void Iot::sync() noexcept {
     process_counter++;
     putMessage(IOT::IOT_STATE_READY);
     printf("process_counter is: %d\n", process_counter);
+}
 
+void Iot::onSync(){
+    sync();
+    putMessage(IOT::RADIO1_STATE_ON);
 }
 
 int Iot::getProcessCounter() const{

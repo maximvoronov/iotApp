@@ -2,17 +2,16 @@
 #define RADIO1_H
 #include "IRadio1.h"
 #include "token.h"
+#include "iot.h"
 #include <vector>
+#include <QObject>
 
-
-
-
-class Radio1 : public IRadio1
+class Radio1 :  public QObject, public IRadio1
 {
-public:
+   Q_OBJECT
+   public:
     explicit Radio1();
     Q_DISABLE_COPY_MOVE(Radio1);
-    //friend void sync();
     void disconnect();
     std::vector<Token> exchange(std::unique_ptr<Geo> geo);
     void connect();
